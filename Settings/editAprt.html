@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="keywords" content="Azenta, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AQARY</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap"
+          rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/themify-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+            crossorigin=""></script>
+
+    <style>
+        .selectBox {
+            position: inherit;
+        }
+
+
+        .selectBox select {
+            width: 100%;
+            font-weight: bold;
+        }
+
+        .overSelect {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        #checkboxes {
+            display: none;
+            border: 1px #dadada solid;
+            /* padding-left: 15px; */
+            position: absolute;
+            background: white;
+            margin-top: 20%;
+            padding: 2%;
+            z-index: 2;
+            width: 85%;
+        }
+
+        #checkboxes2 {
+            display: none;
+            border: 1px #dadada solid;
+            /* padding-left: 15px; */
+            position: absolute;
+            background: white;
+            margin-top: 20%;
+            padding: 2%;
+            z-index: 2;
+            width: 85%;
+        }
+
+        #checkboxes label {
+            display: block;
+        }
+
+        #checkboxes2 label {
+            display: block;
+        }
+
+        #map {
+            /* width: 800px; */
+            width: 100%;
+            height: 400px;
+        }
+
+        h5 {
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-storage.js"></script>
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<!-- Offcanvas Menu Section Begin -->
+<div class="offcanvas-menu-overlay"></div>
+<div class="canvas-open">
+    <i class="icon_menu"></i>
+</div>
+<div class="offcanvas-menu-wrapper">
+    <div class="canvas-close" id="toadd">
+        <i class="icon_close"></i>
+    </div>
+
+    <nav class="main-menu">
+        <ul>
+            <li><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/indeex.html">Home</a></li>
+            <li><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/Propertiess.html">Properties</a></li>
+            <li><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/SellProperty.html">Sell Property</a></li>
+            <li><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+
+</div>
+<!-- Offcanvas Menu Section End -->
+
+<!-- Header Section Begin -->
+<header class="header-section">
+    <div class="top-nav">
+        <div class="container">
+            <div class="row" id="toappend">
+                <div class="col-lg-7">
+                    <nav class="main-menu">
+                        <ul>
+                            <li ><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/indeex.html">Home</a></li>
+                            <li ><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/Propertiess.html">Properties</a></li>
+                            <li ><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/SellProperty.html">Sell Property</a></li>
+                            <li><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Sell Section Begin -->
+<section class="contact-section">
+    <div class="container">
+        <div class="col-lg-10 offset-lg-1">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="contact-text">
+                        <div class="section-title">
+
+                            <h2>Edit property</h2>
+                        </div>
+
+                    </div>
+
+
+                    <div class="md-form mb-5">
+                        <div class="property-sidebar">
+
+
+                            <div class="sidebar-btn">
+                                <div class="bt-item">
+                                    <input onclick="Rent()" type="radio" name="s-type" id="st-buy" checked>
+                                    <label for="st-buy">Rent</label>
+                                </div>
+                                <div class="bt-item">
+                                    <input onclick="Sale()" type="radio" name="s-type" id="st-rent">
+                                    <label for="st-rent">Sale</label>
+                                </div>
+                            </div>
+                            <div class="first-row mt-5 mb-5 d-flex row">
+
+                                <div class="col-3">
+                                    <div class="multiselect w-100" style="max-height:90%;">
+                                        <div class="selectBox">
+
+                                            <select id="Nearbyplaces" style="display: none;">
+
+                                            </select>
+                                            <div class="nice-select mr-4 w-100" tabindex="0"
+                                                 onclick="showCheckboxes()">
+                                                <span class="current">Nearby places</span>
+                                                <ul class="list"></ul>
+                                            </div>
+                                            <div id="checkboxes" style="display: none;">
+                                                <label for="one">
+                                                    <input type="checkbox" id="one" value="School" class="mr-1"
+                                                           onclick="addvalues()">School</label>
+                                                <label for="two">
+                                                    <input type="checkbox" id="two" value="Hospital" class="mr-1"
+                                                           onclick="addvalues1()">Hospital</label>
+                                                <label for="three">
+                                                    <input type="checkbox" id="three" value="Metro" class="mr-1"
+                                                           onclick="addvalues2()">Metro</label>
+                                                <label for="four">
+                                                    <input type="checkbox" id="four" value="Train Station"
+                                                           class="mr-1" onclick="addvalues3()">Train
+                                                    Station</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-3">
+                                    <div class="multiselect" style="max-height:90%;">
+                                        <div class="selectBox">
+
+                                            <select id="Features" style="display: none;">
+
+                                            </select>
+                                            <div class="nice-select mr-4 w-100" tabindex="0"
+                                                 onclick="showCheckboxes2()">
+                                                <span class="current">Features</span>
+                                                <ul class="list"></ul>
+                                            </div>
+                                            <div id="checkboxes2" style="display: none;">
+                                                <label for="five">
+                                                    <input type="checkbox" id="five" value="Parking" class="mr-1"
+                                                           onclick="addvalues4()">Parking</label>
+                                                <label for="six">
+                                                    <input type="checkbox" id="six" value="Views" class="mr-1"
+                                                           onclick="addvalues5()">Views</label>
+                                                <label for="seven">
+                                                    <input type="checkbox" id="seven" value="Balacony" class="mr-1"
+                                                           onclick="addvalues6()">Balacony</label>
+                                                <label for="eight">
+                                                    <input type="checkbox" id="eight" value="Security" class="mr-1"
+                                                           onclick="addvalues7()">Security
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="md-form row mt-5 mb-5">
+                                <div class="col-6">
+                                    <h5 for="inputPlaceholderEx">Price</h5>
+                                    <input placeholder="Enter the apartment price in Egp" type="text" id="Price"
+                                           class="form-control">
+                                </div>
+                            </div>
+
+
+                            <div class="md-form mt-5 mb-5">
+                                <h5> Available date</h5>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span> from </span> <input type="date" id="Date" name="availabledate"
+                                                                   class="w-100 form-control">
+                                    </div>
+                                    <div class="col-6">
+                                        <span> till </span>
+                                        <input type="date" id="Date1" name="availabledate" class="w-100 form-control">
+                                        <br /><br />
+                                    </div>
+                                </div>
+
+                                </label>
+
+                            </div>
+                            <div class="md-form">
+                                <button type="submit" onclick="editApr()" id="Upload" class="site-btn w-100"
+                                        style="height: 50px;">Edit</button> <br />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</section>
+<script>
+
+</script>
+<!-- Sell Section End -->
+
+
+<!-- Footer Section Begin -->
+<footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg">
+    <div class="container">
+        <div class="footer-text">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer-logo">
+                        <div class="logo">
+
+                            <h1>AQARY</h1>
+                        </div>
+                        <p>Subscribe our newsletter to get notification about new updates.</p>
+                        <form action="#" class="newslatter-form">
+                            <input type="text" placeholder="Enter your email...">
+                            <button type="submit"><i class="fa fa-location-arrow"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Section End -->
+</body>
+<!-- Js Plugins -->
+<script src="https://unpkg.com/geofirestore/dist/geofirestore.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/jquery.nice-select.min.js"></script>
+<script src="js/jquery.slicknav.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/edit.js"></script>
+</html>

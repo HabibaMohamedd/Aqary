@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>AQARY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+    	body{
+    margin-top:20px;
+    background:#FFFFFF;
+}
+.card {
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 15px 1px rgba(52,40,104,.08);
+}
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    background-clip: border-box;
+    border: 1px solid #2cbdb8;
+    border-radius: .2rem;
+}
+.card-header:first-child {
+    border-radius: calc(.2rem - 1px) calc(.2rem - 1px) 0 0;
+}
+.card-header {
+    border-bottom-width: 1px;
+}
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    color: inherit;
+    background-color: #fff;
+    border-bottom: 1px solid #2cbdb8;
+}
+.primary-btn {
+		display: inline-block;
+	font-size: 14px;
+	color: #ffffff;
+	background: #2cbdb8;
+	padding: 8px 30px 10px;
+	border: 1px solid #2cbdb8;
+	}
+.list-group-item-action {
+background: #ffffff;
+}
+.tab-paneact {
+background: #ffffff;
+}
+.title{
+	background: #2cbdb8;
+	}
+
+
+.list-group{
+
+  border-color: #2cbdb8;
+
+}
+.list-group-item.active {
+  background-color: #2cbdb8;
+  border-color: #2cbdb8;
+  font-weight: bold;
+  color: #fff;
+}
+
+.list-group-item {
+  color: #2cbdb8;
+}
+
+.list-group-item:hover {
+  color: fff;
+}
+
+
+    </style>
+</head>
+<body>
+
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-storage.js"></script>
+<div class="container p-0">
+
+    <h1 class="h3 mb-3">Settings</h1>
+
+    <div class="row">
+        <div class="col-md-5 col-xl-4">
+
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Profile Settings</h5>
+                </div>
+
+
+                <div class="list-group list-group-mine" role="tablist">
+                    <a class="list-group-item active " data-toggle="list" href="#account" role="tab">
+                        <span>Account</span>
+                    </a>
+                    <a class="list-group-item" data-toggle="list" href="#password" role="tab">
+                        Password
+                    </a>
+                    <a class="list-group-item" data-toggle="list" href="#" role="tab">
+                        Terms and conditions
+                    </a>
+
+                    <a class="list-group-item" data-toggle="list" href="#delete" role="tab" onclick="deleteAccount()">
+                        Delete account
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-7 col-xl-8">
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="account" role="tabpanel">
+
+                    <div class="card">
+                        <div class="card-header">
+
+                            <h5 class="card-title mb-0">Info</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label for="inputFirstName">First Name</label>
+                                        <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputFirstName">Last Name</label>
+                                        <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPhone">Phone Number</label>
+                                        <input type="text" class="form-control" id="inputPhone" placeholder="Phone Number">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="text-center">
+                                        <img  src="contact-placeholder.jpg" id="img" class="rounded-circle img-responsive mt-2" width="128" height="128">
+                                        <div class="mt-2">
+                                            <input type="file" class="btn"  id="files"  onchange="previewFile()" name="files" multiple ><br><br>
+
+                                        </div>
+                                        <small>For best results, use an image at least 128px by 128px in .jpg format</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="primary-btn" onclick="Save()">Save changes</button>
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="tab-pane fade" id="password" role="tabpanel">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Password</h5>
+
+                            <div class="form-group">
+                                <label for="inputPasswordCurrent">Current password</label>
+                                <input type="password" class="form-control" id="inputPasswordCurrent">
+                                <span><a href="#">Forgot your password?</a></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPasswordNew">New password</label>
+                                <input type="password" class="form-control" id="inputPasswordNew">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPasswordNew2">Verify password</label>
+                                <input type="password" class="form-control" id="inputPasswordNew2">
+                            </div>
+                            <button type="submit" class="primary-btn" onclick="changePassword()">Save changes</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="js/form1.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

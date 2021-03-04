@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sign in</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- LINEARICONS -->
+    <link rel="stylesheet" href="fonts/linearicons/style.css">
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
+<div class="wrapper">
+    <div class="inner">
+
+        <h3>Sign in</h3>
+        <div class="form-holder">
+            <span class="lnr lnr-user"></span>
+            <input type="text" class="form-control" placeholder="Enter your email" id="email1">
+        </div>
+        <div class="form-holder">
+            <span class="lnr lnr-lock"></span>
+            <input type="password" class="form-control" placeholder="New password" id="password1">
+        </div>
+        <div class="form-holder">
+            <span class="lnr lnr-lock"></span>
+            <input type="password" class="form-control" placeholder="Re-enter new password" id="repassword1">
+        </div>
+
+        <button id="forget" onclick="Reset()">
+            <span> Sign in</span>
+        </button>
+
+    </div>
+
+</div>
+</body>
+<script src="js/forgetPassword.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/main.js"></script>
+</html>

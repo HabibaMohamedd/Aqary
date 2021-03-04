@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+   
+    <meta name="keywords" content="Azenta, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AQARY</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/themify-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/map.css" type="text/css">
+
+    <!-- Load Leaflet from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+            crossorigin=""></script>
+
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="https://unpkg.com/esri-leaflet@2.5.0/dist/esri-leaflet.js"
+            integrity="sha512-ucw7Grpc+iEQZa711gcjgMBnmd9qju1CICsRaryvX7HJklK0pGl/prxKvtHwpgm5ZHdvAil7YPxI1oWPOWK3UQ=="
+            crossorigin=""></script>
+
+    <!-- Load Esri Leaflet Geocoder from CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.css"
+          integrity="sha512-IM3Hs+feyi40yZhDH6kV8vQMg4Fh20s9OzInIIAc4nx7aMYMfo+IenRUekoYsHZqGkREUgx0VvlEsgm7nCDW9g=="
+          crossorigin="">
+    <script src="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.js"
+            integrity="sha512-HrFUyCEtIpxZloTgEKKMq4RFYhxjJkCiF5sDxuAokklOeZ68U2NPfh4MFtyIVWlsKtVbK5GD2/JzFyAfvT5ejA=="
+            crossorigin=""></script>
+    <style>
+        #checkboxes {
+            display: none;
+            border: 1px #dadada solid;
+            padding-left: 15px;
+        }
+
+        #checkboxes2 {
+            display: none;
+            border: 1px #dadada solid;
+            padding-left: 15px;
+        }
+
+        #checkboxes label {
+            display: block;
+        }
+
+        #checkboxes2 label {
+            display: block;
+        }
+
+        .multi-checkbox {
+            display: block;
+            width: 260px;
+            position: absolute;
+            background: white;
+            margin-top: 65%;
+            z-index: 3;
+        }
+
+        .multi-checkbox2 {
+            display: block;
+            width: 260px;
+            position: absolute;
+            background: white;
+            margin-top: 89%;
+            z-index: 3;
+        }
+
+        .multi-checkbox label input {
+            margin-right: 3px;
+        }
+
+        .multi-checkbox2 label input {
+            margin-right: 3px;
+        }
+    </style>
+
+</head>
+
+<body>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-storage.js"></script>
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<!-- Offcanvas Menu Section Begin -->
+<div class="offcanvas-menu-overlay"></div>
+<div class="canvas-open">
+    <i class="icon_menu"></i>
+</div>
+<div class="offcanvas-menu-wrapper">
+    <div class="canvas-close" id="toadd">
+        <i class="icon_close"></i>
+    </div>
+
+    <nav class="main-menu">
+        <ul>
+            <li><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/indeex.html">Home</a></li>
+            <li><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/Propertiess.html">Properties</a></li>
+            <li><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/SellProperty.html">Sell Property</a></li>
+            <li><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+
+</div>
+<!-- Offcanvas Menu Section End -->
+
+<!-- Header Section Begin -->
+<header class="header-section">
+    <div class="top-nav">
+        <div class="container">
+            <div class="row" id="toappend">
+                <div class="col-lg-7">
+                    <nav class="main-menu">
+                        <ul>
+                            <li ><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/indeex.html">Home</a></li>
+                            <li class="active"><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/Propertiess.html">Properties</a></li>
+                            <li><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/SellProperty.html">Sell Property</a></li>
+                            <li><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Header End -->
+<div id="mapid"></div>
+
+<script >
+    var mymap = L.map('mapid').fitWorld();
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 16,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiaGFiZWJhbXVoYW1tZWQiLCJhIjoiY2thZDc1aHJ1MDF3bTJ0bXR5aWMzdHRrbCJ9.22ML8H5Qyfccincjoe7TcQ'
+}).addTo(mymap);
+mymap.locate({setView: true, watch: true});
+    var searchControl = L.esri.Geocoding.geosearch().addTo(mymap);
+
+    var results = L.layerGroup().addTo(mymap);
+
+    searchControl.on('results', function (data) {
+        results.clearLayers();
+        for (var i = data.results.length - 1; i >= 0; i--) {
+            results.addLayer(L.marker(data.results[i].latlng));
+        }
+    });
+
+
+
+    var marker;
+    mymap.on('locationfound', function(ev){
+        if (!marker) {
+            marker = L.marker(ev.latlng);
+        } else {
+            marker.setLatLng(ev.latlng);
+        }
+        marker.addTo(mymap);
+    })
+</script>
+
+
+<section class="property-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="property-sidebar">
+                    <h4>Search Property</h4>
+                    <form action="#" class="sidebar-search">
+                        <div class="sidebar-btn">
+                            <div class="bt-item">
+                                <input onclick="Sale()" type="radio" name="s-type" id="st-buy" checked>
+                                <label for="st-buy">Buy</label>
+                            </div>
+                            <div class="bt-item">
+                                <input onclick="Rent()" type="radio" name="s-type" id="st-rent">
+                                <label for="st-rent">Rent</label>
+                            </div>
+                        </div>
+
+                        <div class="first-row">
+                            <select id="Bedroom">
+                                <option value="">Number of bedrooms</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                            <select id="Bathroom">
+                                <option value="">Number of Bathrooms</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+
+                            </select>
+                            <select>
+                                <option value="">Any City</option>
+                                <option value="">Tanta</option>
+                                <option value="">Cairo</option>
+                                <option value="">Alexandria</option>
+                            </select>
+                            <div class="nice-select" tabindex="0" onclick="showCheckboxes()"><span
+                                    class="current">Nearby places</span>
+                                <ul class="list"></ul>
+                            </div>
+                            <div id="checkboxes" style="display: none;" class="multi-checkbox">
+                                <label for="one">
+                                    <input type="checkbox" id="one" value="School"
+                                           onclick="addvalues()">School</label>
+                                <label for="two">
+                                    <input type="checkbox" id="two" value="Hospital"
+                                           onclick="addvalues1()">Hospital</label>
+                                <label for="three">
+                                    <input type="checkbox" id="three" value="Metro"
+                                           onclick="addvalues2()">Metro</label>
+                                <label for="four">
+                                    <input type="checkbox" id="four" value="Train Station"
+                                           onclick="addvalues3()">Train
+                                    Station</label>
+                            </div>
+                        </div>
+                        <div class="second-row">
+                            <div class="nice-select" tabindex="0" onclick="showCheckboxes2()"><span
+                                    class="current">Features</span>
+                                <ul class="list"></ul>
+                            </div>
+                            <div id="checkboxes2" style="display: none;" class="multi-checkbox2">
+                                <label for="five">
+                                    <input type="checkbox" id="five" value="Parking"
+                                           onclick="addvalues4()">Parking</label>
+                                <label for="six">
+                                    <input type="checkbox" id="six" value="Views"
+                                           onclick="addvalues5()">Views</label>
+                                <label for="seven">
+                                    <input type="checkbox" id="seven" value="Balacony"
+                                           onclick="addvalues6()">Balacony</label>
+                                <label for="eight">
+                                    <input type="checkbox" id="eight" value="Security"
+                                           onclick="addvalues7()">Security
+                                </label>
+                            </div>
+                            <div class="price-range-wrap">
+                                <div class="price-text">
+                                    <label for="priceRange">Price:</label>
+                                    <input type="text" id="priceRange" readonly>
+                                </div>
+                                <div id="price-range" class="slider"></div>
+                            </div>
+                            <div class="room-size-range">
+                                <div class="price-text">
+                                    <label for="roomsizeRange">Size:</label>
+                                    <input type="text" id="roomsizeRange" readonly>
+                                </div>
+                                <div id="roomsize-range" class="slider"></div>
+                            </div>
+                            <button  onclick="Search()" type="button" class="search-btn">Search</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+                <div class="col-lg-9">
+                    <h4 class="property-title">Property</h4>
+                    <div class="property-list" id="property">
+                        <div class="single-property-item" >
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="property">
+                                        <a href="./Propertydetails.html" class="property-pic"><img alt="" id="main_image" onclick="showDetails(this)"></a>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="property-text">
+                                        <div class="s-text" id="type"></div>
+                                        <h5 class="r-title" id="city"></h5>
+                                        <div class="room-price">
+                                            <span>Start From:</span>
+                                            <h5 id="price"></h5>
+                                        </div>
+                                        <div class="properties-location" id="address"><i class="icon_pin"></i>
+                                           </div>
+
+                                        <ul class="room-features">
+                                            <li>
+                                                <i class="fa fa-arrows"></i>
+                                                <p id="size"></p>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-bed"></i>
+                                                <p id="bedrooms"></p>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-bath"></i>
+                                                <p id="bathrooms"></p>
+                                            </li>
+
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- Property End -->
+
+   
+
+     <!-- Footer Begin -->
+    <footer class="footer-section set-bg" data-setbg="img/footer-bg.jpg">
+        <div class="container">
+            <div class="footer-text">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="footer-logo">
+                            <div class="logo">
+                                
+								 <h1>AQARY</h1>
+                            </div>
+                            <p>Subscribe our newsletter to get notification about new updates.</p>
+                            <form action="#" class="newslatter-form">
+                                <input type="text" placeholder="Enter your email...">
+                                <button type="submit"><i class="fa fa-location-arrow"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+               </div>
+        </div>
+    </footer>
+    <!-- Footer End-->
+
+    <!--  Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bar.js"></script>
+    <script src="js/foruser.js"></script>
+    <script src="js/showProperties.js"></script>
+    <script src="js/Preview (2).js"></script>
+    <script src="js/showDetails.js"></script>
+    <script src="js/mapdetails.js"></script>
+    <script src="js/logout.js"></script>    <script src="js/scrollbar.js"></script>
+
+<script>
+        var expanded = false;
+        var expanded2 = false;
+
+        function showCheckboxes() {
+            var checkboxes = document.getElementById("checkboxes");
+            if (!expanded) {
+                checkboxes.style.display = "block";
+                expanded = true;
+            } else {
+                checkboxes.style.display = "none";
+                expanded = false;
+            }
+            var values = $('#checkboxes').val();
+        }
+
+
+        function showCheckboxes2() {
+            var checkboxes = document.getElementById("checkboxes2");
+            if (!expanded2) {
+                checkboxes.style.display = "block";
+                expanded2 = true;
+            } else {
+                checkboxes.style.display = "none";
+                expanded2 = false;
+            }
+            var values = $('#checkboxes2').val();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="keywords" content="Azenta, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AQARY</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap"
+          rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/themify-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+
+    </style>
+
+
+</head>
+
+<body>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-storage.js"></script>
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<!-- Offcanvas Menu Section Begin -->
+<div class="offcanvas-menu-overlay"></div>
+<div class="canvas-open">
+    <i class="icon_menu"></i>
+</div>
+<div class="offcanvas-menu-wrapper">
+    <div class="canvas-close" id="toadd">
+        <i class="icon_close"></i>
+    </div>
+
+    <nav class="main-menu">
+        <ul>
+            <li><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/indeex.html">Home</a></li>
+            <li><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/Propertiess.html">Properties</a></li>
+            <li><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/SellProperty.html">Sell Property</a></li>
+            <li><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+
+</div>
+<!-- Offcanvas Menu Section End -->
+
+<!-- Header Section Begin -->
+<header class="header-section">
+    <div class="top-nav">
+        <div class="container">
+            <div class="row" id="toappend">
+                <div class="col-lg-7">
+                    <nav class="main-menu">
+                        <ul>
+                            <li ><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/indeex.html">Home</a></li>
+                            <li><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/Propertiess.html">Properties</a></li>
+                            <li><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/SellProperty.html">Sell Property</a></li>
+                            <li><a href="C:/Users/ProSoft/eclipse-workspace/AqaryProject/Main/contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container p-0">
+
+
+    <div class="container mt-5">
+
+        <p><b> * 1 means that they're equally important .<br>
+            * 3 means least important . <br>
+            * 9 means most important .</b></p>
+
+
+        <div class="row">
+            <div class="col-md-4 border border-light">
+                <h4 class="font-weight-bold text-center mt-3">Price to Size</h4>
+                <hr>
+                <div class="survey-head text-center">
+                    <i class="fas fa-poll-h fa-3x blue-text mb-2"></i>
+                    <p class="font-weight-normal">How you think matters</p>
+                    <p>How much is price important to size?<br>
+                    </p>
+                </div>
+                <hr><br>
+                <p class="text-center">Your ratings:</p>
+                <p class="text-center">Price</p>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="priceandsize" type="radio" id="pricetosize9" value="9">
+                    <label class="form-check-label" for="pricetosize9">9 ( price is more important )</label>
+                </div>
+
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="priceandsize" type="radio" id="pricetosize7" value="7">
+                    <label class="form-check-label" for="pricetosize7">7</label>
+                </div>
+
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="priceandsize" type="radio" id="pricetosize5" value="5">
+                    <label class="form-check-label" for="pricetosize5">5</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="priceandsize" type="radio" id="pricetosize3" value="3">
+                    <label class="form-check-label" for="pricetosize3">3</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="priceandsize" type="radio" id="pricetosize1" value="1">
+                    <label class="form-check-label" for="pricetosize1">1   (Equally important) </label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="priceandsize" type="radio" id="sizetoprice3" value="0.33">
+                    <label class="form-check-label" for="sizetoprice3">3</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="priceandsize" type="radio" id="sizetoprice5" value="0.2">
+                    <label class="form-check-label" for="sizetoprice5">5</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="priceandsize" type="radio" id="sizetoprice7" value="0.14">
+                    <label class="form-check-label" for="sizetoprice7">7</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="priceandsize" type="radio" id="sizetoprice9" value="0.11">
+                    <label class="form-check-label" for="sizetoprice9">9 (Size is more important )</label>
+                </div>
+                <p class="text-center">Size</p>
+                <hr>
+
+            </div>
+            <hr>
+
+            <div class="col-md-4">
+                <h4 class="font-weight-bold text-center mt-3">Price to Bedroom number</h4>
+                <hr>
+                <div class="survey-head text-center">
+                    <i class="fas fa-poll-h fa-3x blue-text mb-2"></i>
+                    <p class="font-weight-normal">How you think matters</p>
+                    <p>How much is price important to bedroom number?<br>
+                    </p>
+                </div>
+                <hr><br>
+                <p class="text-center">Your ratings:</p>
+                <p class="text-center">Price</p>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="pricetobed" type="radio" id="pricetobed9" value="9">
+                    <label class="form-check-label" for="pricetobed9">9 ( price is more important )</label>
+                </div>
+
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="pricetobed" type="radio" id="pricetobed7" value="7">
+                    <label class="form-check-label" for="pricetobed7">7</label>
+                </div>
+
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="pricetobed" type="radio" id="pricetobed5" value="5">
+                    <label class="form-check-label" for="pricetobed5">5</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="pricetobed" type="radio" id="pricetobed3" value="3">
+                    <label class="form-check-label" for="pricetobed3">3</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="pricetobed" type="radio" id="pricetobed1" value="1">
+                    <label class="form-check-label" for="pricetobed1">1 (equally important )</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="pricetobed" type="radio" id="bedtoprice3" value="0.33">
+                    <label class="form-check-label" for="bedtoprice3">3</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="pricetobed" type="radio" id="bedtoprice5" value="0.2">
+                    <label class="form-check-label" for="bedtoprice5">5</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="pricetobed" type="radio" id="bedtoprice7" value="0.14">
+                    <label class="form-check-label" for="bedtoprice7">7</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="pricetobed" type="radio" id="bedtoprice9" value="0.11">
+                    <label class="form-check-label" for="bedtoprice9">9 ( Bedroom number is more important )</label>
+                </div>
+                <p class="text-center">Bedroom number</p>
+                <hr>
+
+            </div>
+            <div class="col-md-4">
+                <h4 class="font-weight-bold text-center mt-3">Price to Bathroom number</h4>
+                <hr>
+                <div class="survey-head text-center">
+                    <i class="fas fa-poll-h fa-3x blue-text mb-2"></i>
+                    <p class="font-weight-normal">How you think matters</p>
+                    <p>How much is price important to bathroom number ?<br>
+                    </p>
+                </div>
+                <hr>
+                <p class="text-center">Your ratings:</p>
+                <p class="text-center">Price</p>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="pricetobath" type="radio" id="pricetobath9" value="9">
+                    <label class="form-check-label" for="pricetobath9">9 ( price is more important )</label>
+                </div>
+
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="pricetobath" type="radio" id="pricetobath7" value="7">
+                    <label class="form-check-label" for="pricetobath7">7</label>
+                </div>
+
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="pricetobath" type="radio" id="pricetobath5" value="5">
+                    <label class="form-check-label" for="pricetobath5">5</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="pricetobath" type="radio" id="pricetobath3" value="3">
+                    <label class="form-check-label" for="pricetobath3">3</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="pricetobath" type="radio" id="pricetobath1" value="1">
+                    <label class="form-check-label" for="pricetobath1">1 (equally important )</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="pricetobath" type="radio" id="bathtoprice3" value="0.33">
+                    <label class="form-check-label" for="bathtoprice3">3</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="pricetobath" type="radio" id="bathtoprice5" value="0.2">
+                    <label class="form-check-label" for="bathtoprice5">5</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="pricetobath" type="radio" id="bathtoprice7" value="0.14">
+                    <label class="form-check-label" for="bathtoprice7">7</label>
+                </div>
+                <div class="form-check mb-4">
+                    <input class="form-check-input" name="pricetobath" type="radio" id="bathtoprice9" value="0.11">
+                    <label class="form-check-label" for="bathtoprice9">9 ( bathroom number is more important )</label>
+                </div>
+                <p class="text-center">Bathroom number</p>
+
+                <hr>
+
+            </div>
+        </div>
+        <!-- Radio -->
+
+        <hr>
+
+    </div>
+</div>
+
+<!-- Card Regular -->
+
+
+</div>
+</div>
+
+<div class="container mt-5">
+
+
+
+
+    <div class="row">
+        <div class="col-md-4 border border-light">
+            <!-- Card Regular -->
+            <h4 class="font-weight-bold text-center mt-3">Size to Bedroom number</h4>
+            <hr>
+            <div class="survey-head text-center">
+                <i class="fas fa-poll-h fa-3x blue-text mb-2"></i>
+                <p class="font-weight-normal">How you think matters</p>
+                <p>How much is size important to bedroom number? <br>
+                </p>
+            </div>
+            <hr>
+            <p class="text-center">Your rating:</p>
+            <p class="text-center">Size</p>
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="sizetobed" type="radio" id="sizetobed9" value="9" >
+                <label class="form-check-label" for="sizetobed9">9 ( Size is more important )</label>
+            </div>
+
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="sizetobed" type="radio" id="sizetobed7" value="7">
+                <label class="form-check-label" for="sizetobed7">7</label>
+            </div>
+
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="sizetobed" type="radio" id="sizetobed5" value="5">
+                <label class="form-check-label" for="sizetobed5">5</label>
+            </div>
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="sizetobed" type="radio" id="sizetobed3" value="3">
+                <label class="form-check-label" for="sizetobed3">3</label>
+            </div>
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="sizetobed" type="radio" id="sizetobed1" value="1">
+                <label class="form-check-label" for="sizetobed1">1 ( equally important )</label>
+            </div>
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="sizetobed" type="radio" id="bedtosize3" value="0.33">
+                <label class="form-check-label" for="bedtosize3">3</label>
+            </div>
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="sizetobed" type="radio" id="bedtosize5" value="0.2">
+                <label class="form-check-label" for="bedtosize5">5</label>
+            </div>
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="sizetobed" type="radio" id="bedtosize7" value="0.14">
+                <label class="form-check-label" for="bedtosize7">7</label>
+            </div>
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="sizetobed" type="radio" id="bedtosize9" value="0.11">
+                <label class="form-check-label" for="bedtosize9">9 ( bedroom number is more important )</label>
+            </div>
+            <p class="text-center">Bedroom Number</p>
+            <hr>
+        </div>
+        <div class="col-md-4">
+            <h4 class="font-weight-bold text-center mt-3">Size to Bathroom number</h4>
+            <hr>
+            <div class="survey-head text-center">
+                <i class="fas fa-poll-h fa-3x blue-text mb-2"></i>
+                <p class="font-weight-normal">How you think matters</p>
+                <p>How much is the size important to bathroom number ?
+                </p>
+            </div>
+            <hr>
+            <p class="text-center">Your rating:</p>
+            <p class="text-center">Size</p>
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="sizetobath" type="radio" id="sizetobath9" value="9" >
+                <label class="form-check-label" for="sizetobath9">9 ( size is more important )</label>
+            </div>
+
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="sizetobath" type="radio" id="sizetobath7" value="7">
+                <label class="form-check-label" for="sizetobath7">7</label>
+            </div>
+
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="sizetobath" type="radio" id="sizetobath5" value="5">
+                <label class="form-check-label" for="sizetobath5">5</label>
+            </div>
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="sizetobath" type="radio" id="sizetobath3" value="3">
+                <label class="form-check-label" for="sizetobath3">3</label>
+            </div>
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="sizetobath" type="radio" id="sizetobath1" value="1">
+                <label class="form-check-label" for="sizetobath1">1 ( Equally Important )</label>
+            </div>
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="sizetobath" type="radio" id="bathtosize3" value="0.33">
+                <label class="form-check-label" for="bathtosize3">3</label>
+            </div>
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="sizetobath" type="radio" id="bathtosize5" value="0.2">
+                <label class="form-check-label" for="bathtosize5">5</label>
+            </div>
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="sizetobath" type="radio" id="bathtosize7" value="0.14">
+                <label class="form-check-label" for="bathtosize7">7</label>
+            </div>
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="sizetobath" type="radio" id="bathtosize9" value="0.11">
+                <label class="form-check-label" for="bathtosize9">9 ( bathroom number is more important )</label>
+            </div>
+            <p class="text-center">bathroom number</p>
+            <!-- Radio -->
+
+            <hr>
+
+        </div>
+
+
+        <div class="col-md-4">
+            <!-- Card Regular -->
+            <h4 class="font-weight-bold text-center mt-3">Bedroom number to Bathroom number</h4>
+            <hr>
+            <div class="survey-head text-center">
+                <i class="fas fa-poll-h fa-3x blue-text mb-2"></i>
+                <p class="font-weight-normal">How you think matters</p>
+                <p>How much is the bedroom number important  to bathroom number?
+                </p>
+            </div>
+            <hr>
+            <p class="text-center">Your rating:</p>
+            <p class="text-center">Bedroom number</p>
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="bedtobath" type="radio" id="bedttobath9" value="9" >
+                <label class="form-check-label" for="bedttobath9">9 ( Bedroom number is more important )</label>
+            </div>
+
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="bedtobath" type="radio" id="bedtobath7" value="7">
+                <label class="form-check-label" for="bedtobath7">7</label>
+            </div>
+
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="bedtobath" type="radio" id="bedtobath5" value="5">
+                <label class="form-check-label" for="bedtobath5">5</label>
+            </div>
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="bedtobath" type="radio" id="bedtobath3" value="3">
+                <label class="form-check-label" for="bedtobath3">3</label>
+            </div>
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="bedtobath" type="radio" id="bedtobath1" value="1">
+                <label class="form-check-label" for="bedtobath1">1 (equally important )</label>
+            </div>
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="bedtobath" type="radio" id="bathtobed3" value="0.33">
+                <label class="form-check-label" for="bathtobed3">3</label>
+            </div>
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="bedtobath" type="radio" id="bathtobed5" value="0.2">
+                <label class="form-check-label" for="bathtobed5">5</label>
+            </div>
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="bedtobath" type="radio" id="bathtobed7" value="0.14">
+                <label class="form-check-label" for="bathtobed7">7</label>
+            </div>
+            <div class="form-check mb-4">
+                <input class="form-check-input" name="bedtobath" type="radio" id="bathtobed9" value="0.11">
+                <label class="form-check-label" for="bathtobed9">9  (Bathroom number is more important )</label>
+            </div>
+            <p class="text-center">Bathroom number</p>
+            <!-- Radio -->
+
+            <hr>
+
+        </div>
+    </div>
+    <div class="md-form">
+        <button type="submit" onclick="DoAHP()" id="Upload" class="site-btn w-100"
+                data-toggle="modal" data-target="#exampleModal"  style="height: 50px;">Find the best</button> <br />
+    </div>
+    <!-- Card Regular -->
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Best property based on your choices</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="property-list" id="property">
+                <div class="single-property-item" >
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="property">
+                                <a href="./Propertydetails.html" class="property-pic"><img alt="" id="main_image" onclick="showDetails(this)"></a>
+
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="property-text">
+                                <div class="s-text" id="type"></div>
+                                <h5 class="r-title" id="city"></h5>
+                                <div class="room-price">
+                                    <span>Start From:</span>
+                                    <h5 id="price"></h5>
+                                </div>
+                                <div class="properties-location" id="address"><i class="icon_pin"></i>
+                                </div>
+
+                                <ul class="room-features">
+                                    <li>
+                                        <i class="fa fa-arrows"></i>
+                                        <p id="size"></p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-bed"></i>
+                                        <p id="bedrooms"></p>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-bath"></i>
+                                        <p id="bathrooms"></p>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="md-form" id="fordet">
+                    <button type="submit" onclick="showDetails(this)" id="Up" class="site-btn w-100"
+                            style="height: 50px;">Click here to show more details</button> <br />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Intro Model End -->
+</body>
+<!-- Js Plugins -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/jquery.nice-select.min.js"></script>
+<script src="js/jquery.slicknav.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="js/createOtherMatrices.js"></script>
+<!--<script src="js/showDetails.js"></script>-->
+<script>
+
+
+
+		 $(document).ready(() => {
+            console.log("I'm ready")
+            setTimeout(() => {
+                console.log("I'm ready after 10 seconds")
+                $('#triggerModal').click();
+            }, 5000)
+        })
+    </script>
+
+<!--<script src="js/ahp.js"></script>-->
+
+</html>

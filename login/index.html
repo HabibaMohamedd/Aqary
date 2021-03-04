@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>Sign up</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- LINEARICONS -->
+	<link rel="stylesheet" href="fonts/linearicons/style.css">
+
+	<!-- STYLE CSS -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+	<link rel="icon" href="AqaryProject/img/photo.jpg" type="image/jpg">
+
+
+	<style>
+html {
+  scroll-behavior: smooth;
+}
+
+#section1 {
+  height: 600px;
+}
+
+#section2 {
+  height: 600px;
+}
+</style>
+</head>
+
+<body>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
+<div class="wrapper" id="section1">
+	<div class="inner">
+
+		<div>
+			<h3>Sign up</h3>
+				<div class="form-holder">
+					<span class="lnr lnr-user"></span>
+					<input type="text" class="form-control" placeholder="First Name" id="firstName" required>
+				</div>
+				<div class="form-holder">
+					<span class="lnr lnr-user"></span>
+					<input type="text" class="form-control" placeholder="Last Name" id="lastName" required>
+				</div>
+				<div class="form-holder">
+					<span class="lnr lnr-phone-handset"></span>
+					<input type="text" class="form-control" placeholder="Phone Number" id="phoneNumber" onkeyup="phone1();" required>
+				</div>
+			<div id="phone-txt" style="color:#FF0000 ; font-size:50%">
+			</div>
+				<div class="form-holder">
+					<span class="lnr lnr-envelope"></span>
+					<input type="text" class="form-control" placeholder="Mail" id="email" required>
+				</div>
+			<div id="email-txt" style="color:#FF0000 ; font-size:50%">
+			</div>
+			<div class="container">
+				<div class="form-holder">
+					<span class="lnr lnr-lock"></span>
+					<input type="password" class="form-control" placeholder="Password" id="password" minlength="6"onkeyup="validate();" required
+						   >
+					<span class="far fa-eye" id="togglePassword" style="width:20%;height:20%;padding-left:400px"></span>
+					</div>
+				<div id="validation-txt" style="color:#FF0000 ; font-size:50%">
+				</div>
+				</div>
+			<div class="container">
+				<div class="form-holder">
+					<span class="lnr lnr-lock"></span>
+					<input type="password" class="form-control" placeholder="Confirm Password" id="re_password" minlength="6" onkeyup="match();"
+						   required>
+					<span class="far fa-eye" id="retoggleRePassword" style="width:20%;height:20%;padding-left:400px"></span>
+					</div>
+				<div id="matchpass-txt" style="color:#FF0000 ; font-size:50%">
+				</div>
+				</div>
+			<div id="recaptcha-container" style="padding-left:60px"></div>
+			<a href="#section2"><button id="signUp" onclick="Signup()">Sign up</button></a>
+		</div>
+
+	</div>
+</div>
+	<div class="wrapper" id="section2">
+		<div class="inner">
+	<h3>Verification phone number</h3>
+	<div class="form-holder">
+		<span class="lnr lnr-phone-handset"></span>
+		<input type="text" class="form-control" placeholder="Verification code" id="code" required>
+	</div>
+	<button id="verify" onclick="Verify()">Verify Code</button>
+		</div>
+</div>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/form.js"></script>
+</body>
+
+</html>
