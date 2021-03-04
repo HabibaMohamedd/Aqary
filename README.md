@@ -1,0 +1,2 @@
+# Aqary
+we would like to replace this traditional way since finding a trustworthy place to buy a house is still a difficult task for some. Therefore, this application will, hopefully, facilitate this task of buying, or finding the appropriate house by providing a platform that is available with all the necessary information that users might need, as well as a user friendly interface that is easy to use.
